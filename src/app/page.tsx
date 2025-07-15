@@ -123,7 +123,7 @@ export default function Home() {
                 {/* JSON Viewer */}
                 <div className="lg:col-span-2">
                   <JsonViewer
-                    data={mergeResult.success ? mergeResult.data : null}
+                    data={mergeResult.success ? mergeResult.data || null : null}
                     title="Merged JSON Result"
                   />
                 </div>
@@ -133,7 +133,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-lg font-medium text-gray-200 mb-4">Export Options</h3>
                     <DownloadButton
-                      data={mergeResult.success ? mergeResult.data : null}
+                      data={mergeResult.success ? mergeResult.data || null : null}
                       filename="merged-data.json"
                       disabled={!mergeResult.success}
                     />
